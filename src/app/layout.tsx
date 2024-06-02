@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { FC } from "react";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
 import { COMPANY, DEVELOPER } from "@/utils/constants";
+import { FC } from "react";
 
 type Props = Readonly<{
   children: React.ReactNode;
@@ -17,7 +24,19 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<Props> = ({ children }) => (
   <html lang="en">
-    <body className={inter.className}></body>
+    <body className={inter.className}>
+      <ClerkProvider>
+        <header>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </header>
+        <main>{children}</main>
+      </ClerkProvider>
+    </body>
   </html>
 );
 
