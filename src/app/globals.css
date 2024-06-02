@@ -1,0 +1,16 @@
+body {
+  background-color: #171923 !important;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+button {
+  color: black;
+  padding: 8px !important;
+  background-color: white !important;
+}

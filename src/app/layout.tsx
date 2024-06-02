@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ChakraProvider } from "@chakra-ui/react";
 import {
   ClerkProvider,
   SignedIn,
@@ -10,6 +11,7 @@ import {
 } from "@clerk/nextjs";
 import { COMPANY, DEVELOPER } from "@/utils/constants";
 import { FC } from "react";
+import SignOutButton from "@/app/components/sign-out";
 
 type Props = Readonly<{
   children: React.ReactNode;
@@ -26,15 +28,18 @@ const RootLayout: FC<Props> = ({ children }) => (
   <html lang="en">
     <body className={inter.className}>
       <ClerkProvider>
-        <header>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </header>
-        <main>{children}</main>
+        <ChakraProvider>
+          <header>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+              <SignOutButton />
+            </SignedIn>
+          </header>
+          <main>{children}</main>
+        </ChakraProvider>
       </ClerkProvider>
     </body>
   </html>
