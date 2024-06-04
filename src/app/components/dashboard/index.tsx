@@ -62,9 +62,6 @@ const Dashboard: FC = () => {
         <Text fontSize="3xl" fontWeight="bold">
           Dashboard
         </Text>
-        <Button bg="gray.800" _hover={{ bg: "gray.700" }}>
-          Download
-        </Button>
       </Flex>
 
       <Flex justify="space-between" align="center" mb={8}>

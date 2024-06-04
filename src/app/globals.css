@@ -1,16 +1,39 @@
 body {
   background-color: #171923 !important;
+  justify-content: center !important;
+  align-items: center;
 }
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 16px;
+  padding: 16px;
 }
 
 button {
   color: black;
-  padding: 8px !important;
+  padding: 16px !important;
+  border-radius: 32px;
   background-color: white !important;
+}
+button:hover {
+  background-color: aqua !important;
+  transition: all 0.4s ease;
+  color: #fff;
+}
+.LogInWrapper {
+  margin-top: 10%;
+  width: 100%;
+  font-size: 32px;
+  color: wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.signInButtonStyle {
+  font-size: 32px;
 }

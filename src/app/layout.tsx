@@ -9,9 +9,9 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/nextjs";
-import { COMPANY, DEVELOPER } from "@/utils/constants";
+import { COMPANY, DEVELOPER } from "./utils/constants";
 import { FC } from "react";
-import SignOutButton from "@/app/components/sign-out";
+import SignOutButton from "./components/sign-out";
 
 type Props = Readonly<{
   children: React.ReactNode;
@@ -30,14 +30,19 @@ const RootLayout: FC<Props> = ({ children }) => (
       <ClerkProvider>
         <ChakraProvider>
           <header>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
             <SignedIn>
               <UserButton />
               <SignOutButton />
             </SignedIn>
           </header>
+          <SignedOut>
+            <div className="LogInWrapper">
+              <h2>Welcome to task2!</h2>
+              <div className="signInButtonStyle">
+                <SignInButton />
+              </div>
+            </div>
+          </SignedOut>
           <main>{children}</main>
         </ChakraProvider>
       </ClerkProvider>

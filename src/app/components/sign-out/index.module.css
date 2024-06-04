@@ -1,0 +1,9 @@
+.signOutBtn {
+    border-radius: 32px;
+  }
+  .signOutBtn:hover {
+    transition: all 0.5s ease;
+    background-color: rgb(244, 78, 78) !important;
+    color: #fff;
+  }
+  
