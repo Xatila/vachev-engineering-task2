@@ -9,7 +9,7 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/nextjs";
-import { COMPANY, DEVELOPER } from "./utils/constants";
+import { COMPANY, DEVELOPER } from "@/utils/constants";
 import { FC } from "react";
 import SignOutButton from "./components/sign-out";
 
